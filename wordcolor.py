@@ -1,19 +1,21 @@
 import tkinter as tk
 
+
 class colorcode:
-    def __init__(self,code,editor):
+    def __init__(self, code, editor):
         self.code = code
         self.editor = editor
 
     def findver(self):
-        s=self.code
+        s = self.code
         if s:
             idx = '1.0'
             while 1:
-                idx = self.editor.search(s, idx, nocase=1,stopindex=tk.END)
-                if not idx: break
-                        #last index sum of current index and
-                        #length of text
+                idx = self.editor.search(s, idx, nocase=1, stopindex=tk.END)
+                if not idx:
+                    break
+                    # last index sum of current index and
+                    # length of text
                 lastidx = '%s+%dc' % (idx, len(s))
                 self.editor.tag_add('found', idx, lastidx)
                 idx = lastidx
@@ -21,14 +23,15 @@ class colorcode:
             return self.editor
 
     def findimpter(self):
-        s=self.code
+        s = self.code
         if s:
             idx = '1.0'
             while 1:
-                idx = self.editor.search(s, idx, nocase=1,stopindex=tk.END)
-                if not idx: break
-                        #last index sum of current index and
-                        #length of text
+                idx = self.editor.search(s, idx, nocase=1, stopindex=tk.END)
+                if not idx:
+                    break
+                    # last index sum of current index and
+                    # length of text
                 lastidx = '%s+%dc' % (idx, len(s))
                 self.editor.tag_add('found1', idx, lastidx)
                 idx = lastidx
